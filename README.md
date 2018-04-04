@@ -1,43 +1,61 @@
-# Create React Express App
+# React Passport Example Application
 
-## About This Boilerplate
+An example application which combines a back-end which stores user data and front-end React.js application which handles user authentication sessions.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+This application be easily separated into two completely different repositories.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Created using the tutorials below:
 
-## Starting the app locally
+https://vladimirponomarev.com/blog/authentication-in-react-apps-creating-components
+https://vladimirponomarev.com/blog/authentication-in-react-apps-jwt
 
-Start by installing front and backend dependencies. While in this directory, run the following commands:
+However, this version has replaced the React Router v3 which were used in the above tutorials with the most recent React Router v4 which has some major differences. I also made some minor tweaks to account for the NPM packages which had issues due to updates since the tutorial was published.
 
+This application incorporates the following packages:
+
+- axios
+- bcryptjs
+- jsonwebtoken
+- mongoose
+- passport
+- react-router-dom
+- validator
+
+## Installation
+
+After cloning the repo, follow the steps below:
+```sh
+$ cd react-passport-example
 ```
-yarn install
-cd client
-yarn install
-cd ..
-``
-
-After both installations complete, run the following command in your terminal:
-
+```sh
+$ yarn install
 ```
-yarn start
+```sh
+$ sudo mongod
+```
+```sh
+$ yarn run dev
 ```
 
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-After confirming that you have an up to date git repository and a Heroku app created, complete the following:
-
-1. Build the React app for production by running the following command:
-
+When editing the files, run the following command for webpack to watch your files and bundle whenever changes are made:
+```sh
+$ yarn run bundle
 ```
-yarn build
-```
-> Note: A yarn build will be required to register any new Post requests from any front-end JavaScript to to prevent any proxy server errors.
 
-2. Add and commit all changes to git
+## Screenshots
 
-3. Push to Heroku
+Home page before login:
 
-If all previous steps were followed correctly, your application should be deployed to Heroku!
+![Alt Home Page](/README/home.png?raw=true)
+
+Sign up page:
+
+![Alt Signup Page](/README/signup.png?raw=true)
+
+Login page:
+
+![Alt Login Page](/README/login.png?raw=true)
+
+Dashboard which is only accessible after login:
+
+![Alt Dashboard](/README/dashboard.png?raw=true)
